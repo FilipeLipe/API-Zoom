@@ -1,0 +1,140 @@
+main {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .button {
+    margin-top: 20px;
+    background-color: #2D8CFF;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 0 10;
+  }
+  
+  .button:hover {
+    background-color: #2681F2;
+  }
+
+  input[text]{
+    margin-left: 5rem;
+  }
+  button {
+    margin-top: 20px;
+    background-color: #2D8CFF;
+    color: #ffffff;
+    text-decoration: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .container {
+    height: 100%;
+    border: 1px solid gray;
+    border-radius: 7px;
+    background-color: gray;
+  }
+  .titulo-tela {
+    height: 12px;
+    display: table;
+    margin: 0 auto;
+    background-color: gray;
+    color: black;
+    padding: 0px;
+    font-weight: bold;
+    width: 10%;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 100%;
+  }
+  .titulo {
+    width: 100%;
+    min-width: 805px;
+    background-color: gray;
+    height: 1px;
+  }
+  :host ::ng-deep .ui-dropdown {
+    width: 100%;
+  }
+  :host ::ng-deep .ui-multiselect {
+    width: 100%;
+  }
+  :host ::ng-deep .ui-inputtext {
+    width: 100%;
+  }
+  :host ::ng-deep .ui-button {
+    width: 100% !important;
+  }
+  .p-button.p-button-secondary.p-button-text,
+  .p-buttonset.p-button-secondary > .p-button.p-button-text,
+  .p-splitbutton.p-button-secondary > .p-button.p-button-text {
+    background-color: #e2e2e2;
+  }
+  .p-button.p-button-secondary.p-button-text:enabled:hover,
+  .p-buttonset.p-button-secondary > .p-button.p-button-text:enabled:hover,
+  .p-splitbutton.p-button-secondary > .p-button.p-button-text:enabled:hover {
+    background: rgba(96, 125, 139, 0.384);
+    border-color: transparent;
+    color: #607d8b;
+  }
+
+  :host ::ng-deep .p-dropdown {
+    width: 100%;
+  }
+  :host ::ng-deep .p-multiselect {
+    width: 100%;
+  }
+  :host ::ng-deep .p-calendar {
+    width: 100% !important;
+  }
+  .pesquisa{
+      width: 20%;
+      border: 1px solid gray;
+      border-radius: 7px;
+      margin-left: 1%;
+      background-color: #fff;
+  }
+  .Questionarios{
+    border: 1px solid #607d8b;
+    border-radius: 5px;
+    width: 77%;
+    float: right;
+    margin-right: 1%;
+    height: 50% !important;
+  }
+  #formulario{
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    margin: 0 auto;
+  }
+  .logo_left{
+  display: block;
+  height: 100%;
+  width:  100%;
+  }
+
+
+  .dialog{
+    border-radius: 350px;
+    border-color: red;
+    background-color: #2681F2;
+  }
+
+  div{
+    margin-left: 2rem;
+  }

@@ -1,0 +1,114 @@
+<div class="content" role="main">
+
+  <h1>Aplicação JWT e SDK</h1>
+
+  <!-- For Component View -->
+  <div id="meetingSDKElement">
+    <!-- Zoom Meeting SDK Component View Rendered Here -->
+  </div>
+
+
+  <button *ngIf=" accessMeeting.status == false" class="button" (click)="showDialogCriarMeeting()">Criar nova Meeting</button>
+  <button *ngIf=" accessMeeting.status == true" class="button" (click)="deleteMeeting()">Deletar Meeting</button>
+  <button *ngIf=" accessMeeting.status == true" class="button" style="margin-left: 1rem;" (click)="showDialogEntrarMeeting()">Entrar em Meeting</button>
+
+  <h3 *ngIf=" accessMeeting.status == true; else naoCriado">Id Meeting - {{ accessMeeting.idMeeting }}<br><br>Start Url - {{ accessMeeting.start_url }}<br><br>Join Url - {{ accessMeeting.join_url }}<br><br>Password - {{ accessMeeting.password }}</h3>
+  <ng-template #naoCriado>
+    <h3>Id Meeting - <br>Start Url - <br>Join Url - <br>Password - </h3>
+  </ng-template>
+
+  <div *ngIf=" accessMeeting.status == true || clickButtonCreate == false; else criarMeetingDiv"></div>
+  <ng-template #criarMeetingDiv>
+    <div id="formulario">   
+      <h1>Criar Meeting</h1>    
+      <label for="MeetingName">Meeting</label>
+      <input 
+          id="input"
+          name="MeetingName"
+          type="text"
+          style="width: 50%;"
+          [(ngModel)]="meeting.topic"
+          pInputText>   
+
+      <label for="MeetingDuration">Duração</label>
+      <input 
+          id="input"
+          name="MeetingDuration"
+          type="text"
+          style="width: 50%;"
+          [(ngModel)]="meeting.duration"
+          pInputText>   
+
+      <label for="MeetingPassword">Senha</label>
+      <input 
+          id="input"
+          name="MeetingPassword"
+          type="text"
+          style="width: 50%;"
+          [(ngModel)]="meeting.password"
+          pInputText>  
+              
+      <div class="p-col-12" style="float: left;">
+        <button 
+          pButton
+          pRipple
+          (click)="CreateMeeting(); dropDialogCriarMeeting()"
+          type="button"
+          class="p-button-raised p-button-secondary p-button-text"
+          style="margin-top: 1rem; margin-right: 1rem;"
+        >Criar</button>      
+        <button 
+          pButton
+          pRipple
+          (click)="dropDialogCriarMeeting()"
+          type="button"
+          class="p-button-raised p-button-secondary p-button-text"
+        >Cancelar</button>
+      </div>          
+    </div>
+  </ng-template>
+
+  <div *ngIf="dialogEntrarMeeting == false; else entrarMeetingDiv"></div>
+  <ng-template #entrarMeetingDiv>
+    <div id="formulario">   
+      <h1>Entrar Meeting</h1>    
+      <label for="MeetingNumber">Number Meeting</label>
+      <input 
+          id="input"
+          name="MeetingNumber"
+          type="text"
+          style="width: 50%;"
+          [(ngModel)]="keysMeeting.meetingNumber"
+          pInputText>  
+
+      <label for="MeetingPassword">Senha</label>
+      <input 
+          id="input"
+          name="MeetingPassword"
+          type="text"
+          style="width: 50%;"
+          [(ngModel)]="keysMeeting.passWord"
+          pInputText>  
+              
+      <div class="p-col-12" style="float: left;">
+        <button 
+          pButton
+          pRipple
+          (click)="getSignature(); dropDialogEntrarMeeting()"
+          type="button"
+          class="p-button-raised p-button-secondary p-button-text"
+          style="margin-top: 1rem; margin-right: 1rem;"
+        >Entrar</button>      
+        <button 
+          pButton
+          pRipple
+          (click)="dropDialogEntrarMeeting()"
+          type="button"
+          class="p-button-raised p-button-secondary p-button-text"
+        >Cancelar</button>
+      </div>          
+    </div>
+  </ng-template>
+  
+</div>
+<router-outlet></router-outlet>
